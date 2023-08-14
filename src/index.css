@@ -1,13 +1,207 @@
+/* Reseting the margin and padding */
+* {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 100;
+}
+/* importing fonts */
+@font-face {
+  font-family: Pop-Bold;
+  src: url("./assets/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: Pop-Bolditalic;
+  src: url("./assets/fonts/Poppins-BoldItalic.ttf");
+}
+@font-face {
+  font-family: Pop-Extrabold;
+  src: url("./assets/fonts/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: Pop-Extrabolditalic;
+  src: url("./assets/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: Pop-Italic;
+  src: url("./assets/fonts/Poppins-Italic.ttf");
+}
+@font-face {
+  font-family: Pop-Regular;
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+/* Setting the box-sizeing to boreder-box to every element */
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+/* font size variables */
+:root {
+  /* --fsSmall: 16px; */
+  /* --fsSmall: 7.5px; */
+  --fsSmall: clamp(0.469rem, 0.339rem + 2.073vw, 1rem);
+  /* --fsXSmall: 12px; */
+  /* --fsXSmall: 5px; */
+  --fsXSmall: clamp(0.313rem, 0.206rem + 1.707vw, 0.75rem);
+  /* --fsMedium: 28.8px; */
+  /* --fsMedium: 10px; */
+  --fsMedium: clamp(0.625rem, 0.338rem + 4.585vw, 1.8rem);
+  /* --fsLarge: 31.2px; */
+  /* --fsLarge: 8px; */
+  --fsLarge: clamp(0.5rem, 0.146rem + 5.659vw, 1.95rem);
+}
+/* color variables */
+:root {
+  --red: hsl(0, 100%, 67%);
+  --purple: hsl(259, 100%, 65%);
+}
+/* Body to center all caliculator content */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.total-content {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
+.birthsection {
+  /* padding: 0px 10px; */
+  padding: 0px clamp(0rem, -0.152rem + 2.439vw, 0.625rem) 0px
+    clamp(0rem, -0.152rem + 2.439vw, 0.625rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 33%;
+}
+.birthday-form {
+  /* padding: 0px 30px; */
+  padding: 0px clamp(0rem, -0.457rem + 7.317vw, 1.875rem) 0px
+    clamp(0rem, -0.457rem + 7.317vw, 1.875rem);
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  max-width: 35.625rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.birthsection > h6 {
+  font-size: var(--fsSmall);
+  align-self: flex-start;
+  color: #000;
+  font-family: Pop-Bold;
+  letter-spacing: 0.2em;
+  letter-spacing: 0em;
+  padding: 0px 0px 0.625rem 0px;
+}
+.birthsection > input {
+  border-radius: 0.15em;
+  border: 0px;
+  font-family: Pop-Extrabold;
+  font-size: var(--fsMedium);
+  /* padding: 10px 0px 10px 15px; */
+  padding: clamp(0rem, -0.152rem + 2.439vw, 0.625rem) 0px
+    clamp(0rem, -0.152rem + 2.439vw, 0.625rem)
+    clamp(0rem, -0.229rem + 3.659vw, 0.938rem);
+  width: 100%;
+  outline: 0px;
+}
+.birthsection > input:focus {
+  border: 1px solid var(--purple);
+}
+.validity {
+  align-self: flex-start;
+  margin-top: 0.5em;
+  font-family: Pop-Italic;
+  color: var(--red);
+  font-size: var(--fsXSmall);
+}
+.center-section {
+  display: flex;
+  flex-direction: column;
+  /* padding-top: 40px; */
+  padding: clamp(0.625rem, 0.168rem + 7.317vw, 2.5rem) 0px 20px 0px;
+  justify-content: center;
+  align-items: center;
+}
+.button-container > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px;
+  border-radius: 50%;
+  /* height: 65px; */
+  height: clamp(1.25rem, 0.564rem + 10.976vw, 4.063rem);
+  aspect-ratio: 1/1;
+  background-color: var(--purple);
+}
+.button-container > button:hover {
+  cursor: pointer;
+  background-color: #000;
+  transition: all 0.3s;
+}
+.button-container > button > svg {
+  /* height: 28px; */
+  height: clamp(0.625rem, 0.351rem + 4.39vw, 1.75rem);
+  width: auto;
+}
+.button-container {
+  /* padding-bottom: 40px; */
+  padding-bottom: clamp(0.625rem, 0.168rem + 7.317vw, 2.5rem);
+}
+.age-container {
+  font-size: var(--fsLarge);
+  font-family: Pop-Extrabolditalic;
+}
+.age-container > h1 > span {
+  font-size: 1.1em;
+  color: var(--purple);
+}
+@media (min-width: 47.9375rem) {
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .birthday-section {
+    width: 100%;
+  }
+  .total-content {
+    padding: 6.25rem;
+    width: 100%;
+    max-width: 67.5rem;
+  }
+  .center-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    width: 100%;
+  }
+  .age-container {
+    position: relative;
+    top: -5rem;
+    width: max-content;
+    align-self: self-start;
+  }
+  .button-container {
+    padding: 0.625rem 0px 0px 0px;
+    display: flex;
+    align-self: flex-end;
+    margin-left: auto;
+    max-width: 40.625rem;
+    justify-content: flex-end;
+  }
+  .button-container > button {
+    align-self: flex-end;
+  }
 }
