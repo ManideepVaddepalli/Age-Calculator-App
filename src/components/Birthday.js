@@ -3,6 +3,7 @@ import Validity from "./Validity";
 import { useState } from "react";
 
 export default function Birthday() {
+  // code for making text boxs dynamic
   let [dateform, setDateform] = useState("");
   function datechanged(event) {
     setDateform(event.target.value);
@@ -15,6 +16,7 @@ export default function Birthday() {
   function yearchanged(event) {
     setYearform(event.target.value);
   }
+  // -------------------------------------------------------------------
   return (
     <section className="birthday-section">
       <form className="birthday-form">

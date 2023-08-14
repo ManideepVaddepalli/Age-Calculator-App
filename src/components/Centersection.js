@@ -10,6 +10,11 @@ export default function Centersection() {
   let [H1years, setH1years] = useState("- -");
   let [H1months, setH1months] = useState("- -");
   let [H1days, setH1days] = useState("- -");
+  function setDefaultValues() {
+    setH1years("- -");
+    setH1months("- -");
+    setH1days("- -");
+  }
 
   // function when invalid details are entered
   function setRed() {
@@ -133,6 +138,7 @@ export default function Centersection() {
     if (check1 && check2 && check3) {
       if (currentDate <= birthDate) {
         setRed();
+        setDefaultValues();
       } else {
         if (x >= 0 && x < 12) {
           if (
@@ -146,23 +152,27 @@ export default function Centersection() {
             (dateArray[0] > 31 || dateArray[0] < 1)
           ) {
             setOnlyDateRed();
+            setDefaultValues();
           } else if (
             (x === 3 || x === 5 || x === 8 || x === 10) &&
             (dateArray[0] > 30 || dateArray[0] < 1)
           ) {
             setOnlyDateRed();
+            setDefaultValues();
           } else if (
             x === 1 &&
             dateArray[2] % 4 === 0 &&
             (dateArray[0] > 29 || dateArray[0] < 1)
           ) {
             setOnlyDateRed();
+            setDefaultValues();
           } else if (
             x === 1 &&
             dateArray[2] % 4 !== 0 &&
             (dateArray[0] > 28 || dateArray[0] < 1)
           ) {
             setOnlyDateRed();
+            setDefaultValues();
           } else {
             // -------------------------------------------------------------actual solution
             setGreen();
@@ -176,17 +186,21 @@ export default function Centersection() {
           }
         } else {
           setOnlyMonthRed();
+          setDefaultValues();
         }
       }
     } else {
       if (!check1) {
         setOnlyDateRed();
+        setDefaultValues();
       }
       if (!check2) {
         setOnlyMonthRed();
+        setDefaultValues();
       }
       if (!check3) {
         setOnlyYearRed();
+        setDefaultValues();
       }
     }
   }
