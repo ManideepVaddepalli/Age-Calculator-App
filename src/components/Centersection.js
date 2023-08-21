@@ -114,9 +114,9 @@ export default function Centersection() {
       errorMsg.render(<p>Must be a valid month</p>);
     }
     function setOnlyYearRed() {
-      dateTyped[1].style.border = "1px solid hsl(0, 100%, 67%)";
-      let errorMsg = ReactDOM.createRoot(selecledMsg[1]);
-      errorMsg.render(<p>Must be a valid month</p>);
+      dateTyped[2].style.border = "1px solid hsl(0, 100%, 67%)";
+      let errorMsg = ReactDOM.createRoot(selecledMsg[2]);
+      errorMsg.render(<p>Must be a valid Year</p>);
     }
     // interchanging months with date
     // ------------------------------------------------------
