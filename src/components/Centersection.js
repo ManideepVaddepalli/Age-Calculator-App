@@ -69,8 +69,41 @@ export default function Centersection() {
     dateTyped.forEach((field, index) => {
       let numberOfField = Number(field.value);
       // check weather they entered number or alphabets
-      if (Number.isNaN(numberOfField)) {
-        console.log(field);
+      if (field.value) {
+        if (Number.isNaN(numberOfField)) {
+          setDefaultValues();
+          field.style.border = "1px solid hsl(0, 100%, 67%)";
+          switch (index) {
+            case 0:
+              check1 = false;
+              break;
+            case 1:
+              check2 = false;
+              break;
+            case 2:
+              check3 = false;
+              break;
+            default:
+          }
+        } else {
+          field.style.border = "0px";
+          switch (index) {
+            case 0:
+              check1 = true;
+              break;
+            case 1:
+              check2 = true;
+              break;
+            case 2:
+              check3 = true;
+              break;
+            default:
+          }
+        }
+        // check if entered correct date
+        dateArray.push(numberOfField);
+      } else {
+        setDefaultValues();
         field.style.border = "1px solid hsl(0, 100%, 67%)";
         switch (index) {
           case 0:
@@ -84,22 +117,6 @@ export default function Centersection() {
             break;
           default:
         }
-      } else {
-        field.style.border = "0px";
-        switch (index) {
-          case 0:
-            check1 = true;
-            break;
-          case 1:
-            check2 = true;
-            break;
-          case 2:
-            check3 = true;
-            break;
-          default:
-        }
-        // check if entered correct date
-        dateArray.push(numberOfField);
       }
     });
 
